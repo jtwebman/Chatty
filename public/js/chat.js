@@ -17,7 +17,7 @@ Chat.prototype.processCommand = function(command) {
 
 	switch(command) {
 		case 'join':
-			word.shift();
+			words.shift();
 			var room = words.join(' ');
 			this.changeRoom(room);
 			break;

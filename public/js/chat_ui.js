@@ -22,7 +22,6 @@ function processUserInput(chatApp, socket) {
 		{
 			$('#messages').append(divSystemContentElement(JSON.stringify(ex)));
 		}
-		
 	} else {
 		chatApp.sendMessage($('#room').text(), message);
 		$('#messages').append(divEscapedContentElement(message));
@@ -49,7 +48,7 @@ $(document).ready(function() {
 
 	socket.on('joinResult', function(result) {
 		$('#room').text(result.room);
-		$('#messages').append(divSystemContentElement('Room changed.'));
+		$('#messages').append(divSystemContentElement('You successfully joined ' + result.room + ' and are known as ' + result.nickname));
 	});
 
 	socket.on('message', function(message) {
